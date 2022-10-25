@@ -86,6 +86,8 @@ class TimePickerSheet extends TimePicker {
     0,
   );
 
+  final double? bottomSheetHeight;
+
   TimePickerSheet({
     Key? key,
     required this.sheetTitle,
@@ -93,6 +95,7 @@ class TimePickerSheet extends TimePicker {
     required this.hourTitle,
     required this.saveButtonText,
     this.initialDateTime,
+    this.bottomSheetHeight,
     this.minuteInterval = 15,
     this.hourInterval = 1,
     this.minHour = 0,
@@ -150,7 +153,7 @@ class TimePickerSheet extends TimePicker {
       saveButtonColor: saveButtonColor,
       twoDigit: twoDigit,
       child: SizedBox(
-        height: halfOfScreen,
+        height: bottomSheetHeight ?? halfOfScreen,
         child: SafeArea(
           child: Column(
             children: [

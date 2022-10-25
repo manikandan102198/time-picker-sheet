@@ -11,15 +11,17 @@ class SheetHeader extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(16),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          InkWell(
+         
+          // const SizedBox(width: 16),
+          Text(provider.sheetTitle, style: provider.sheetTitleStyle),
+           InkWell(
               onTap: () => Navigator.of(context).pop(),
               child: Icon(
                 provider.sheetCloseIcon,
                 color: provider.sheetCloseIconColor,
               )),
-          const SizedBox(width: 16),
-          Text(provider.sheetTitle, style: provider.sheetTitleStyle),
         ],
       ),
     );
